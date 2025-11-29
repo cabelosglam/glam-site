@@ -13,7 +13,6 @@ from datetime import datetime
 
 ACCOUNT_SID = os.getenv("ACCOUNT_SID")
 AUTH_TOKEN = os.getenv("AUTH_TOKEN")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 FROM_WPP = os.getenv("FROM_WPP")
 
 twilio_client = TwilioClient(ACCOUNT_SID, AUTH_TOKEN)
