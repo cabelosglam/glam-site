@@ -1,0 +1,154 @@
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garantias & Trocas | GLAM Hair Brand</title>
+  <meta name="description" content="Política de garantias e trocas da GLAM Hair Brand: prazos, condições, exclusões, cuidados essenciais e como acionar a garantia das suas extensões capilares.">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- CSS específico da página -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/garantias.css') }}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/maxima-nouva?styles=185767" rel="stylesheet">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL49T2TW6J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YL49T2TW6J');
+</script>
+{% include 'whatsapp.html' %}
+
+<body>
+  <header class="header-blog">{% include 'header.html' %}</header>
+
+  <!-- HERO / BANNER -->
+  <!-- Troque a imagem se preferir: banner-garantias.jpg -->
+  <section class="g-hero" style="--hero-img: url('{{ url_for('static', filename='images/banner-garantias.jpg') }}');">
+    <div class="g-hero__overlay"></div>
+    <div class="g-hero__content">
+      <span class="eyebrow">Política GLAM</span>
+      <h1>Garantias & Trocas</h1>
+      <p>Compromisso com excelência, transparência e resultado impecável para você e suas clientes.</p>
+      <a class="g-btn g-btn--light" target="_blank"
+         href="https://wa.me/55629932-9673?text=Ol%C3%A1!%20Quero%20tirar%20uma%20d%C3%BAvida%20sobre%20garantias%20e%20trocas.">
+        <i class="fa-brands fa-whatsapp"></i> Falar com consultora
+      </a>
+    </div>
+  </section>
+
+  <!-- CARDS PRINCIPAIS -->
+  <section class="g-cards">
+    <article class="g-card">
+      <div class="g-card__icon"><i class="fa-solid fa-rotate-left"></i></div>
+      <h2>Troca & Devolução (7 dias)</h2>
+      <p>Solicite em até <strong>7 dias corridos</strong> do recebimento. Válido para produtos sem uso, com <strong>tag</strong> e <strong>embalagem original</strong> intacta.</p>
+      <ul class="g-list">
+        <li>Sem aplicação, corte, alterações ou intervenção;</li>
+        <li>Sem odores e sem resíduos de cosméticos;</li>
+      </ul>
+      <a class="g-btn" target="_blank"
+         href="https://wa.me/556299329673?text=Ol%C3%A1!%20Quero%20solicitar%20troca%2Fdevolu%C3%A7%C3%A3o.">
+        Solicitar no WhatsApp
+      </a>
+    </article>
+
+    <article class="g-card">
+      <div class="g-card__icon"><i class="fa-solid fa-shield-heart"></i></div>
+      <h2>Garantia de Qualidade (30 dias)</h2>
+      <p>Todos os fios são <strong>100% humanos</strong> e passam por controle rigoroso. A garantia cobre <strong>30 dias após a compra</strong> para avaliação técnica.</p>
+      <p class="g-note">A GLAM poderá analisar o produto para reparo, troca ou devolução conforme laudo técnico.</p>
+    </article>
+  </section>
+
+  <!-- GRID DETALHES -->
+  <section class="g-grid">
+    <article class="g-box">
+      <h3>Condições de Garantia</h3>
+      <ul class="g-list">
+        <li>Ativação no dia da aplicação via QR Code do termo;</li>
+        <li>Uso conforme manual e orientações do profissional;</li>
+        <li>Sem química nas extensões (coloração, descoloração etc.).</li>
+      </ul>
+    </article>
+
+    <article class="g-box">
+      <h3>Exclusões</h3>
+      <ul class="g-list">
+        <li>Químicas e procedimentos nos fios (progressiva, selagem, colorações);</li>
+        <li>Calor direcionado à <strong>base adesiva</strong> / mau uso;</li>
+        <li>Danos por cloro, bronzeadores e protetores sem enxágue adequado;</li>
+        <li>Eventos de caso fortuito ou força maior.</li>
+      </ul>
+    </article>
+
+    <article class="g-box">
+      <h3>Cuidados Essenciais</h3>
+      <ul class="g-list">
+        <li>1ª lavagem: apenas após <strong>48h</strong> da aplicação;</li>
+        <li>Lave com a cabeça levemente para trás e enxágue bem;</li>
+        <li>Evite shampoo <strong>antirresíduos</strong> nas extensões;</li>
+        <li><strong>Não durma</strong> com os cabelos molhados;</li>
+        <li>Use proteção térmica e não direcione calor à base;</li>
+        <li>Praia/piscina: prenda os fios e enxágue após o banho.</li>
+      </ul>
+    </article>
+
+    <article class="g-box">
+      <h3>Ativação</h3>
+      <p>Ative sua garantia no mesmo dia da aplicação. Tenha em mãos:</p>
+      <ul class="g-list">
+        <li>Número de garantia e data da aplicação;</li>
+        <li>CPF e assinatura do cliente;</li>
+        <li>Assinatur do profissional;</li>
+        <li>Envio de foto do destaque, pelo QR code da garantia;</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- FAQ -->
+  <section class="g-faq">
+    <h2 class="g-section-title">Perguntas Frequentes</h2>
+
+    <details>
+      <summary>Qual o prazo para solicitar troca ou devolução?</summary>
+      <div>Até <strong>7 dias corridos</strong> do recebimento, com produto sem uso, tag e embalagem original.</div>
+    </details>
+
+    <details>
+      <summary>Qual o prazo de garantia?</summary>
+      <div><strong>30 dias</strong> a partir da compra para análise técnica e orientação da equipe.</div>
+    </details>
+
+    <details>
+      <summary>Químicas anulam a garantia?</summary>
+      <div>Sim. Qualquer procedimento químico nas extensões (coloração, descoloração, progressiva, selagem, etc.) <strong>anula a garantia</strong>.</div>
+    </details>
+
+    <details>
+      <summary>Como acionar a garantia?</summary>
+      <div>Ative no dia da aplicação pelo QR Code do termo e contate nossa equipe pelo WhatsApp com NF/CPF e número de garantia.</div>
+    </details>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="g-cta">
+    <div class="g-cta__content">
+      <h2>Precisa de ajuda agora?</h2>
+      <p>Fale com uma consultora GLAM e receba orientação personalizada.</p>
+      <a class="g-btn g-btn--dark" target="_blank"
+         href="https://wa.me/55629932-9673?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20garantia%20ou%20troca.">
+        <i class="fa-brands fa-whatsapp"></i> Atendimento no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>{% include 'footer.html' %}</footer>
+</body>
+</html>

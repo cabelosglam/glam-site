@@ -1,0 +1,86 @@
+/* ===============================
+   GLAM — WhatsApp Floating Button
+   Posição: canto inferior esquerdo
+   =============================== */
+
+:root{
+  --wa-green: #e8b0a9;
+  --wa-dark:  #edb6bd;
+  --btn-size: 64px;
+  --shadow:   0 8px 24px rgba(0,0,0,.20);
+}
+
+/* Container fixo no canto inferior esquerdo (respeita safe area em iOS) */
+.whatsapp-float{
+  position: fixed;
+  left: auto;
+  right: calc(16px + env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 9999;
+}
+/* Botão redondo com ícone */
+.whatsapp-button{
+  width: var(--btn-size);
+  height: var(--btn-size);
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--wa-green);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+/* Ícone */
+.whatsapp-button i{
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Hover/Focus */
+.whatsapp-button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.24);
+  background: var(--wa-dark);
+}
+
+.whatsapp-button:active{
+  transform: translateY(0);
+}
+
+.whatsapp-button:focus{
+  outline: none;
+}
+.whatsapp-button:focus-visible{
+  box-shadow: 0 0 0 4px rgba(37,211,102,.35), var(--shadow);
+}
+
+/* Acessibilidade – esconder texto visualmente */
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsivo */
+@media (max-width: 480px){
+  :root{ --btn-size: 56px; }
+  .whatsapp-button i{ font-size: 24px; }
+}
+
+/* Reduzir movimentos para quem preferir */
+@media (prefers-reduced-motion: reduce){
+  .whatsapp-button{ transition: none; }
+}
+
+/* Não imprimir o botão */
+@media print{
+  .whatsapp-float{ display: none; }
+}

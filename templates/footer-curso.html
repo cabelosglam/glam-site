@@ -1,0 +1,43 @@
+
+<div class="footer-container">
+    <!-- Logo -->
+    <div class="footer-col">
+        <img src="{{ url_for('static', filename='images/logo_glam.png') }}" alt="Logo GLAM" class="logo-footer">
+    </div>
+
+    <!-- Produtos GLAM -->
+    <div class="footer-col">
+        <h4>Produtos GLAM</h4>
+        <ul>
+            <li><a href="{{ url_for('brasileiro') }}">Cabelos do Sul</a></li>
+            <li><a href="{{ url_for('regional') }}">Cabelos Regionais</a></li>
+            <li><a href="{{ url_for('russo') }}">Cabelos Russos</a></li>
+            <li><a href="{{ url_for('acessorios') }}">Acessórios</a></li>
+        </ul>
+    </div>  
+
+    <!-- Sobre a GLAM -->
+    <div class="footer-col">
+        <h4>Sobre a GLAM</h4>
+        <ul>
+            <li>Garantias, trocas e devoluções</li>
+            <li><a href="{{ url_for('sobre') }}">Quem somos</a></li>
+            <li><a href="{{ url_for('faq') }}">Perguntas frequentes</a></li>
+            <li><a href="{{ url_for('blog') }}">Glam Magazine</a></li>
+        </ul>
+    </div>
+
+    <!-- Contato -->
+    <div class="footer-col">
+        <h4>Entre em contato</h4>
+        <ul>
+            <li>Consultor 01</li>
+            <li>Consultor 02</li>
+            <li>Consultor 03</li>
+            <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/glamhairbrand/" target="_blank">@glamhairbrand</a></li>
+        </ul>
+    </div>
+
+
+</div>
+<p class="direitos">© 2025 GLAM HAIR BRAND - All rights reserved</p>

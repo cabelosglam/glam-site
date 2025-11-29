@@ -1,0 +1,29 @@
+<header class="header-fixo">
+  <a href="{{ url_for('home') }}">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo GLAM" class="logo">
+  </a>
+
+  <!-- botão hamburguer -->
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="{{ url_for('home') }}">HOME</a></li>
+      <li><a href="{{ url_for('brasileiro') }}">CABELOS BRASILEIROS DO SUL</a></li>
+      <li><a href="{{ url_for('regional') }}">CABELOS BRASILEIROS REGIONAIS</a></li>
+      <li><a href="{{ url_for('russo') }}">CABELOS RUSSOS</a></li>
+      <li><a href="{{ url_for('acessorios') }}">ACESSÓRIOS</a></li>
+      <li><a href="{{ url_for('curso') }}">SEJA GLAM</a></li>
+    </ul>
+  </nav>
+</header>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  toggle.addEventListener('click', () => {
+    navMenu.querySelector('ul').classList.toggle('show');
+  });
+</script>

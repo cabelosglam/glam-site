@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Blog GLAM</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.cdnfonts.com/css/maxima-nouva?styles=185767" rel="stylesheet">
+    </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL49T2TW6J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YL49T2TW6J');
+</script>   
+    {% include 'whatsapp.html' %}
+
+    <body class="body-blog">
+        <header class="header-blog">{% include 'header.html' %}</header>
+        {% if post_destaque %}
+        <section class="post-destaque">
+            <div class="destaque-box">
+                <div class="destaque-selo">EM DESTAQUE</div>
+                <a href="{{ url_for('post', slug=post_destaque.slug) }}">
+                    <img src="{{ url_for('static', filename=post_destaque.imagem2) }}" alt="{{ post_destaque.titulo }}">
+                </a>
+                <div class="destaque-conteudo">
+                    <span class="destaque-data">{{ post_destaque.data }} • {{ post_destaque.leitura }}</span>
+                    <h2><a href="{{ url_for('post', slug=post_destaque.slug) }}">{{ post_destaque.titulo }}</a></h2>
+                    <p>{{ post_destaque.resumo }}</p>
+                    <a href="{{ url_for('post', slug=post_destaque.slug) }}" class="leia-mais">Leia mais...</a>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <section class="blog-layout">
+        <!-- COLUNA ESQUERDA (POSTS) -->
+            <div class="posts-coluna">
+                <h1>Glam Talks</h1>
+
+            {% for post in posts %}
+                <div class="blog-post-linha">
+                    <img src="{{ url_for('static', filename=post.imagem) }}" alt="{{ post.titulo }}">
+                    <div class="conteudo-post">
+                        <span class="data">{{ post.data }} • {{ post.leitura }}</span>
+                        <h3><a href="{{ url_for('post', slug=post.slug) }}">{{ post.titulo }}</a></h3>
+                        <p>{{ post.resumo }}</p>
+                        <a href="{{ url_for('post', slug=post.slug) }}" class="leia-mais">Leia mais</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+            </div>
+
+            <!-- COLUNA DIREITA (SIDEBAR) -->
+            <aside class="sidebar">
+                <h2>SOBRE MIM</h2>
+                <img src="{{ url_for('static', filename='images/foto-perfil-vannicy.png') }}" alt="Foto do autor" class="sobre-img">
+                <p>Somos uma empresa especialista em extensões capilares com expert team de mercado há 12 anos.</p>
+                <a href="{{ url_for('sobre') }}">Leia mais ></a>
+
+                <hr>
+
+                <h2>SIGA-ME</h2>
+                <div class="icones-redes">
+                <a href="https://instagram.com/glamhairbrand" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/suacanal" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </aside>
+        </section>
+        <footer>{% include 'footer.html' %}</footer>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<div class="chat-botao" onclick="abrirChat()">
+  <img src="{{ url_for('static', filename='images/falar-com-pati.png') }}" alt="Pat Glam">
+</div>
+
+<div id="chat-modal" class="chat-modal">
+  <div class="chat-modal-content">
+    <span class="chat-close" onclick="fecharChat()">&times;</span>
+    <iframe src="/chatbot" frameborder="0"></iframe>
+  </div>
+</div>

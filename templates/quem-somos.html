@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem Somos | GLAM Hair Brand</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/maxima-nouva?styles=185767" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL49T2TW6J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YL49T2TW6J');
+</script>
+{% include 'whatsapp.html' %}
+
+<body>
+  <header class="header-blog">{% include 'header.html' %}</header>
+
+    <section class="quem-somos-container">
+        <div class="quem-somos">
+            <h1>Quem Somos</h1>
+            <p>A <strong>Glam Hair Brand</strong> nasceu com a missão de transformar o mercado de extensões capilares no Brasil. Somos uma empresa especialista em extensões capilares com expert team de mercado há 12 anos.</p>
+            <p>Entregamos a excelência dos melhores cabelos do mundo unidos à sofisticação da melhor base existente. Contamos como uma rede de credenciados por todo Brasil e mundo. Fornecemos extensões capilares em 3 linhas: <strong>Cabelos Brasileiros do Sul</strong> ( considerado os melhores cabelos do mundo), Brasileiro Regional e Russo. Se você deseja entregar às suas clientes autenticidade em cada fio, seja Glam!</p>
+        </div>
+        <div class="timeline">
+            <div class="lista">
+                <div class="timeline-item">
+                <h4>2012</h4>
+                <p>Nascimento da marca como Woman Hair Brasil.</p>
+                </div>
+                <div class="timeline-item">
+                <h4>2014</h4>
+                <p>Lançamento do método de fita adesiva no Brasil.</p>
+                </div>
+                <div class="timeline-item">
+                <h4>2015</h4>
+                <p>Primeiro faturamento de 6 dígitos mensais com a aplicação.</p>
+                </div>
+                <div class="timeline-item">
+                <h4>2019</h4>
+                <p>Nasce a Glam Hair Brand, com reposicionamento premium e nacional.</p>
+                </div>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='images/quem-somo-glam-hair.png') }}" alt="Produto 4">
+            </div>
+        </div>
+    </section>
+
+  <footer>{% include 'footer.html' %}</footer>
+</body>
+</html>

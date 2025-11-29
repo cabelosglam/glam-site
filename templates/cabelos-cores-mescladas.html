@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLAM Hair Brand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/produto.css') }}">
+
+    <!-- JuxtaposeJS CSS e JS -->
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/maxima-nouva?styles=185767" rel="stylesheet">
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL49T2TW6J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YL49T2TW6J');
+</script>
+{% include 'whatsapp.html' %}
+
+<body>
+    <div id="modalImagem" class="modal">
+        <div class="modal-conteudo-horizontal">
+            <div class="imagem-zoom-container">
+                <img id="imagemAmpliada" src="" alt="Imagem ampliada">
+            </div>
+            <div class="modal-descricao">
+                <h2 id="tituloProduto">Título do Produto</h2>
+                <p id="descricaoProduto">
+                    Esse aplique de cabelo da linha Glam possui acabamento premium, textura natural e caimento impecável. Indicado para clientes que buscam sofisticação e leveza.
+                </p>
+                <button class="btn-consultar">FALAR COM CONSULTORA</button>
+            </div>
+        </div>
+        <span class="fechar">&times;</span>
+
+    </div>
+ 
+    <header class="header-blog">{% include 'header.html' %}</header>
+    <section class="produtos-section">
+        <h2 class="produtos-title">CABELOS CORES MESCLADAS</h2>
+        <div class="produtos-container">
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-russo/cabelo-glam-dark-mix.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Dark Mix</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-russo/cabelo-glam-eclipse.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Eclipse</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-russo/cabelo-glam-fume.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Fumê</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-russo/cabelo-glam-loiro-iluminado.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Loiro Iluminado</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-russo/cabelo-glam-mix.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Mix</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-brasileiro-regional/cabelo-glam-sunkissed.jpg') }}" alt="Produto 2">
+                <div class="produto-info">
+                    <div class="produto-titulo">Sun Kissed</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-brasileiro-regional/cabelo-glam-dark-mix.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Dark Mix</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-brasileiro-regional/cabelo-glam-eclipse.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Eclipse</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-brasileiro-regional/cabelo-glam-loiro-medio.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Loiro Médio</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-brasileiro-regional/cabelo-glam-loiro-iluminado.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Loiro Iluminado</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-brasileiro-regional/cabelo-glam-mix.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Mix</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+                        <div class="produto-card">
+                <img src="{{ url_for('static', filename='images/cabelo-brasileiro-regional/cabelo-glam-dark-sunkissed.jpg') }}" alt="Produto 4">
+                <div class="produto-info">
+                    <div class="produto-titulo">Dark Sunkissed</div>
+                </div>
+                <button class="btn-adicionar">SAIBA MAIS</button>
+            </div>
+
+
+        </div>
+    </section>
+
+  <footer>{% include 'footer.html' %}</footer>
+
+    <script src="{{ url_for('static', filename='js/descricoes-produtos.js') }}"></script>
+    <script>
+    const modal = document.getElementById("modalImagem");
+    const modalImg = document.getElementById("imagemAmpliada");
+    const modalTitulo = document.getElementById("tituloProduto");
+    const modalDescricao = document.getElementById("descricaoProduto");
+    const fechar = document.querySelector(".fechar");
+
+    document.querySelectorAll(".produto-card").forEach(function (card) {
+        const botao = card.querySelector(".btn-adicionar");
+        const imagem = card.querySelector("img");
+        const titulo = card.querySelector(".produto-titulo").textContent;
+
+        botao.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = imagem.src;
+        modalTitulo.textContent = titulo;
+
+        // Descrição dinâmica a partir do objeto descricoesProdutos
+        modalDescricao.textContent = descricoesProdutos[titulo] || 
+            "Esse aplique de cabelo da linha Glam possui acabamento premium, textura natural e caimento impecável.";
+
+        modalImg.classList.remove("zoom");
+        });
+
+        // Zoom ao clicar na imagem
+        modalImg.addEventListener("click", () => {
+        modalImg.classList.toggle("zoom");
+        });
+    });
+
+    // Fecha ao clicar no "x"
+    fechar.addEventListener("click", () => {
+        modal.style.display = "none";
+        modalImg.classList.remove("zoom");
+    });
+
+    // Fecha ao clicar fora do modal
+    window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+        modal.style.display = "none";
+        modalImg.classList.remove("zoom");
+        }
+    });
+    </script>
+
+   
+</body>
+</html>

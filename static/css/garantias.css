@@ -1,0 +1,230 @@
+/* ===============================
+   GARANTIAS — GLAM Hair Brand
+   Visual moderno com palette blush/rose + ink
+   =============================== */
+
+:root{
+  --ink: #19171a;
+  --muted: #666;
+  --surface: #ffffff;
+  --bg: #faf9fb;
+
+  --blush-50:  #fff4f7;
+  --blush-200: #f9d9e4;
+  --rose-400:  #e4a5b8;
+  --rose-500:  #edaabd;
+  --plum-700:  #bd8b97;
+
+  --emerald-500: #18a566;
+  
+  --radius-xl: 20px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 4px 14px rgba(0,0,0,.06);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.10);
+
+  --container: min(1120px, 92vw);
+}
+
+/* -------- HERO / BANNER -------- */
+.g-hero{
+  position: relative;
+  min-height: clamp(260px, 44vh, 480px);
+  display: grid;
+  place-items: center;
+  background: var(--blush-50);
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-top: -40px;
+}
+.g-hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(180deg, rgba(25,23,26,.45), rgba(25,23,26,.15)),
+    var(--hero-img);
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05);
+  transform: scale(1.02);
+}
+.g-hero__overlay{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(60% 60% at 20% 10%, rgba(255,255,255,.20) 0%, transparent 60%),
+    radial-gradient(50% 50% at 90% 80%, rgba(228,165,184,.20) 0%, transparent 60%);
+  mix-blend-mode: screen;
+}
+.g-hero__content{
+  position: relative;
+  z-index: 2;
+  width: var(--container);
+  color: #fff;
+  text-align: left;
+  padding-inline: 8px;
+}
+.eyebrow{
+  display:inline-block;
+  font-size:.9rem;
+  letter-spacing:.12em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.3);
+  padding: 6px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+.g-hero h1{
+  font-family: 'Maxima Nouva','Inter',sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 6vw, 48px);
+  margin: 10px 0 6px;
+  line-height: 1.08;
+}
+.g-hero p{
+  max-width: 720px;
+  line-height: 1.6;
+  opacity: .95;
+  margin: 0 0 14px;
+}
+
+/* -------- CARDS PRINCIPAIS -------- */
+.g-cards{
+  width: var(--container);
+  margin: 28px auto 8px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: clamp(16px, 3vw, 24px);
+}
+.g-card{
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid #f0e8ec;
+  box-shadow: var(--shadow-sm);
+  padding: clamp(16px, 3vw, 28px);
+}
+.g-card__icon{
+  width: 52px; height: 52px;
+  display:grid; place-items:center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blush-200), var(--rose-400));
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 12px;
+}
+.g-card h2{
+  margin: 6px 0 10px;
+  color: var(--ink);
+  font-size: clamp(20px, 3vw, 24px);
+}
+.g-card p{ color: var(--muted); margin:0 0 8px; }
+.g-note{
+  font-size:.95rem;
+  color:#7a6f74;
+  border-left: 3px solid var(--blush-200);
+  padding-left: 10px;
+}
+
+/* -------- GRID DETALHES -------- */
+.g-grid{
+  width: var(--container);
+  margin: 18px auto 28px;
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: clamp(16px, 3vw, 24px);
+}
+.g-box{
+  background:#fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid #f0e8ec;
+  box-shadow: var(--shadow-sm);
+  padding: clamp(16px, 3vw, 24px);
+}
+.g-box h3{ margin: 4px 0 8px; color: var(--ink); }
+
+.g-list{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+.g-list li{ margin:.5em 0; }
+
+/* -------- FAQ -------- */
+.g-faq{
+  width: var(--container);
+  margin: 10px auto 40px;
+}
+.g-section-title{
+  font-family:'Maxima Nouva','Inter',sans-serif;
+  margin: 4px 0 12px;
+  background: linear-gradient(135deg, var(--rose-400), var(--plum-700));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.g-faq details{
+  background:#fff;
+  border:1px solid #f0e8ec;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  box-shadow: var(--shadow-sm);
+}
+.g-faq summary{
+  cursor:pointer;
+  font-weight:600;
+  list-style:none;
+  color: var(--ink);
+}
+.g-faq summary::-webkit-details-marker{ display:none; }
+.g-faq details div{
+  color: var(--muted);
+  padding-top: 8px;
+  line-height: 1.6;
+}
+
+/* -------- CTA FINAL -------- */
+.g-cta{
+  background: radial-gradient(120% 140% at 100% 0%, var(--blush-200), transparent 50%),
+              linear-gradient(135deg, #fefefe, #fff7fa);
+  border-top: 1px solid #f0e8ec;
+}
+.g-cta__content{
+  width: var(--container);
+  margin: 0 auto;
+  padding: clamp(22px, 6vw, 48px) 8px;
+  text-align: center;
+}
+.g-cta h2{ margin: 0 0 6px; color: var(--ink); }
+.g-cta p{ margin: 0 0 14px; color: var(--muted); }
+
+/* -------- BOTÕES -------- */
+.g-btn{
+  display:inline-flex; gap:8px; align-items:center; justify-content:center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  background: linear-gradient(135deg, var(--rose-400), var(--plum-700));
+  color:#fff;
+  box-shadow: var(--shadow-sm);
+}
+.g-btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.g-btn:active{ transform: translateY(0); }
+.g-btn--light{
+  background: rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.35);
+  color:#fff;
+  backdrop-filter: blur(6px);
+}
+.g-btn--outline{
+  background: transparent;
+  border-color: var(--rose-400);
+  color: var(--plum-700);
+}
+.g-btn--dark{
+  background: linear-gradient(135deg, var(--plum-700), #e19f9f);
+  color:#fff;
+}
+
+/* -------- RESPONSIVO -------- */
+@media (max-width: 900px){
+  .g-cards, .g-grid{ grid-template-columns: 1fr; }
+  .g-hero{ min-height: 320px; }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem Somos | GLAM Hair Brand</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/maxima-nouva?styles=185767" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL49T2TW6J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YL49T2TW6J');
+</script>
+{% include 'whatsapp.html' %}
+
+<body>
+  <header class="header-blog">{% include 'header.html' %}</header>
+
+  <section class="faq-section">
+    <h2 class="faq-title">FAQ - Perguntas Frequentes</h2>
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <button class="faq-question">A GLAM vende para consumidor final?</button>
+        <div class="faq-answer">Não. Nossas extensões são vendidas exclusivamente para profissionais cabeleireiros credenciados. Prezamos pela aplicação correta, segura e com acabamento de alto padrão — por isso trabalhamos apenas com quem domina a técnica ou deseja se capacitar com nosso curso.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Sou profissional, como faço para comprar?</button>
+        <div class="faq-answer">Você pode entrar em contato com uma de nossas consultoras via WhatsApp. Faremos uma breve validação profissional e, após isso, você terá acesso ao nosso catálogo completo com preços e condições exclusivas.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Quais são os tipos de cabelo disponíveis?</button>
+        <div class="faq-answer">Trabalhamos com três linhas principais:<br>
+          - <strong>Cabelo Russo</strong>: fios finos, claros e com o melhor custo-benefício.<br>
+          - <strong>Brasileiro do Sul</strong>: nossa linha premium com qualidade superior e altíssima durabilidade.<br>
+          - <strong>Brasileiro Regional</strong>: fios mais encorpados e naturais, perfeitos para clientes que valorizam volume e presença.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Qual o método das extensões GLAM?</button>
+        <div class="faq-answer">Todas as nossas extensões são no <strong>método de fita adesiva (Tape Hair)</strong> — a técnica mais moderna, confortável e sofisticada do mercado atual. É ideal tanto para alongamento quanto para preenchimento de volume com naturalidade.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">As extensões da GLAM são de cabelo 100% humano?</button>
+        <div class="faq-answer">Sim. Trabalhamos apenas com cabelos 100% humanos, selecionados por especialistas para garantir alinhamento, naturalidade, brilho e durabilidade. O resultado é premium desde o toque até o caimento.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Como faço para aprender a aplicar a fita adesiva?</button>
+        <div class="faq-answer">A GLAM oferece um curso completo de capacitação no método tape hair. Ao concluir a formação, você estará apto(a) para aplicar nossas extensões com excelência e começar a lucrar com um serviço valorizado e de alta demanda.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Posso remover e reutilizar o aplique?</button>
+        <div class="faq-answer">Sim! Nossas extensões são removíveis com o produto adequado, e as fitas podem ser substituídas para nova aplicação. Isso gera economia e fidelização para o salão e para a cliente final.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">A GLAM envia para todo o Brasil?</button>
+        <div class="faq-answer">Sim. Entregamos para todo o território nacional com agilidade e segurança. Nossa logística é pensada para atender profissionais com urgência e eficiência.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Existe suporte após a compra?</button>
+        <div class="faq-answer">Sim. Nossas consultoras acompanham você antes, durante e depois da compra. Você pode tirar dúvidas sobre aplicação, cor, cuidados ou manutenção sempre que precisar.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Como sei qual cor combina com minha cliente?</button>
+        <div class="faq-answer">Nossas consultoras ajudam você a escolher a cor ideal com base nas fotos da cliente. Também oferecemos um <strong>mostruário físico de mechas</strong>, que pode ser adquirido por profissionais credenciados.</div>
+      </div>
+
+    </div>
+  </section>  
+  <footer>{% include 'footer.html' %}</footer>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        faqItem.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

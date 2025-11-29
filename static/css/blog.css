@@ -1,0 +1,313 @@
+
+@font-face {
+  font-family: 'MaximaNouva';
+  src: url('{{ url_for('static', filename='fonts/MaximaNouva-Bold.otf') }}') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.body-blog {
+    background-color: white;
+}
+
+.blog-layout {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+/* COLUNA DE POSTS */
+.posts-coluna {
+    flex: 2;
+    min-width: 300px;
+}
+
+.posts-coluna h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: 'MaximaNouva', sans-serif;
+
+}
+
+/* BLOCO DE POST ESTILO LINHA */
+.blog-post-linha {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+}
+
+.blog-post-linha img {
+    width: auto;
+    height: 200px;
+    object-fit: cover;
+}
+
+.conteudo-post {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.conteudo-post h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'MaximaNouva', sans-serif;
+
+    
+}
+
+.conteudo-post .data {
+    font-size: 12px;
+    color: #999;
+}
+
+.conteudo-post p {
+    font-size: 14px;
+    color: #444;
+}
+
+.info-extra {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* SIDEBAR */
+.sidebar {
+    flex: 1;
+    min-width: 250px;
+    padding-top: 30px;
+}
+
+.sidebar h2 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.sidebar p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.sidebar .sobre-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #000;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.sidebar hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.icones-redes {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.icones-redes a {
+  font-size: 24px;
+  color: #d49ca4; /* tom rosé Glam */
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.icones-redes a:hover {
+  transform: scale(1.1);
+  color: #000;
+}
+
+
+
+.post-destaque {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 20px;
+    background-color: #fff;
+}
+
+.destaque-box {
+    max-width: 800px;
+    border: 1px solid #ccc;
+    position: relative;
+    background: white;
+}
+
+.destaque-selo {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background-color: white;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 1px solid #000;
+}
+
+.destaque-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.destaque-conteudo {
+    padding: 20px;
+}
+
+.destaque-data {
+    font-size: 12px;
+    color: #777;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.destaque-conteudo h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.destaque-conteudo p {
+    font-size: 14px;
+    color: #444;
+}
+
+/* ===========================
+   BLOG GLAM — MOBILE FIRST PATCH
+   =========================== */
+
+/* Tipografia mais fluida */
+.posts-coluna h1 { 
+  font-size: clamp(22px, 6vw, 28px);
+  margin-bottom: 20px;
+}
+
+/* Layout geral mais compacto no mobile */
+@media (max-width: 900px) {
+  .blog-layout {
+    gap: 20px;
+    padding: 16px 14px;
+    max-width: 100%;
+  }
+
+  /* Coluna de posts ocupa 100% */
+  .posts-coluna { 
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  
+
+  /* Sidebar vem abaixo e centralizada */
+  .sidebar {
+    flex: 1 1 100%;
+    min-width: 0;
+    padding-top: 10px;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .sidebar h2 { font-size: clamp(14px, 3.8vw, 16px); }
+  .sidebar p  { font-size: clamp(13px, 3.6vw, 14px); }
+}
+
+/* Post em linha vira coluna, imagem full-width */
+@media (max-width: 900px) {
+  .blog-post-linha {
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .blog-post-linha img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    object-fit: cover;
+    /* opcional: mantém uma proporção agradável mesmo sem poster grande */
+    aspect-ratio: 16 / 9;
+  }
+  .conteudo-post {
+    padding: 14px;
+    gap: 8px;
+  }
+  .conteudo-post h3 { 
+    font-size: clamp(16px, 4.6vw, 18px); 
+    line-height: 1.25;
+  }
+  .conteudo-post p {
+    font-size: clamp(13px, 3.8vw, 14px);
+    line-height: 1.5;
+  }
+  .conteudo-post .data { font-size: 12px; }
+}
+
+/* Post em destaque (hero) responsivo */
+@media (max-width: 900px) {
+  .post-destaque { padding: 10px 14px 0; }
+  .destaque-box { 
+    max-width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .destaque-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9; /* mantém proporção agradável no mobile */
+    object-fit: cover;
+  }
+  .destaque-conteudo { padding: 14px; }
+  .destaque-conteudo h2 { 
+    font-size: clamp(18px, 5.2vw, 20px);
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .destaque-conteudo p {
+    font-size: clamp(13px, 3.8vw, 14px);
+    line-height: 1.5;
+  }
+  .destaque-data { font-size: 12px; }
+  .destaque-selo {
+    top: 8px; left: 8px;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+}
+
+/* Ícones das redes com toque confortável no mobile */
+@media (max-width: 900px) {
+  .icones-redes { justify-content: center; }
+  .icones-redes a { font-size: 22px; }
+}
+
+/* Pequenos refinamentos */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+

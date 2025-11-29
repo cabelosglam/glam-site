@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplique de Cabelo - Glam Hair</title>
+    <meta name="description" content="GLAM Hair Brand — Especialista em aplique de cabelo de luxo. Trabalhamos com cabelos brasileiros do sul, regional e russo. Autenticidade em cada fio. Seja GLAM!">
+    <meta name="keywords" content="aplique de cabelo, extensões capilares, mega hair, fita adesiva, cabelo humano, cabelo russo, cabelo brasileiro, GLAM Hair Brand, alongamento capilar, profissional de beleza">
+    <meta name="author" content="GLAM Hair Brand">
+    <meta property="og:title" content="GLAM Hair | Autenticidade em cada fio">
+    <meta property="og:description" content="Apliques de cabelo premium com tecnologia, conforto e sofisticação. Seja um profissional credenciado GLAM.">
+    <meta property="og:image" content="https://www.glamhair.com.br/static/images/banner-cabelos-brasileiro-regional.jpg">
+    <meta property="og:url" content="https://www.glamhair.com.br/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- JuxtaposeJS CSS e JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/maxima-nouva?styles=185767" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/whatsapp.css') }}">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL49T2TW6J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YL49T2TW6J');
+</script>
+<body>
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+          <source src="{{ url_for('static', filename='videos/video.mp4') }}" type="video/mp4">
+          Seu navegador não suporta vídeo em HTML5.
+      </video>
+    </div>
+
+  <header class="header-blog">{% include 'header.html' %}
+</header>
+  <!-- Banner Principal -->
+  <section class="frase-efeito">
+    <h2>QUEM <span class="somos">SOMOS</span></h2>
+    <p>Somos uma empresa especialista em extensões capilares com expert team de mercado há 12 anos.
+      Entregamos a excelência dos melhores cabelos do mundo unidos à sofisticação da melhor base existente. Contamos como uma rede de credenciados por todo Brasil e mundo. Fornecemos extensões capilares em 3 linhas: Cabelos Brasileiros do Sul ( considerado os melhores cabelos do mundo), Brasileiro Regional e Russo. Se você deseja entregar às suas clientes autenticidade em cada fio, seja Glam!</p>
+  </section>
+  <!-- WhatsApp – Botão Flutuante (inferior esquerdo) -->
+  <div class="whatsapp-float">
+    <a
+      class="whatsapp-button"
+      href="https://wa.me/5562999329673?text=Ol%C3%A1!%20Vim%20pelo%20s-ite%20da%20GLAM%20Hair%20Brand%20e%20quero%20falar%20com%20um%20consultor."
+      target="_blank"
+      rel="noopener"
+      aria-label="Fale no WhatsApp com a GLAM Hair (+55 62 99932-9673)"
+    >
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span class="sr-only">Abrir WhatsApp</span>
+    </a>
+  </div>
+  <section class="bases">
+    <div class="bases-img">
+      <img src="{{ url_for('static', filename='images/base-tradicional.png') }}" alt="Base tradicional de fita adesiva GLAM Hair"  >
+    </div>
+    <div class="bases-img">
+      <img src="{{ url_for('static', filename='images/base-slim.png') }}" alt="base-slim">
+    </div>
+    <div class="bases-img">
+      <img src="{{ url_for('static', filename='images/base-invisiline.png') }}" alt="base-invisiline" >
+    </div>
+  </section>
+
+  <section class="frase-efeito2">
+      <!--<h2>AUTENCIDADE EM <em><strong>CADA FIO</em></strong></h2>-->
+      <p>Desenvolvido com tecnologia de ponta e pensado para oferecer o máximo de conforto e segurança, nosso aplique com base de fita adesiva é a escolha ideal para profissionais que priorizam a saúde dos fios e o bem-estar de suas clientes. Aprovado pelos mais exigentes padrões da dermatologia, ele garante uma fixação leve, discreta e hipoalergênica, elevando a experiência de alongamento capilar a um novo nível de sofisticação e confiança.</p>
+  </section>
+   
+   <!-- caracteristicas -->
+  <section class="caracteristicas">
+    <h2>BASE EM POLIURETANO</h2>
+    <div class="caracteristicas-quadros">
+      <div class="quadros">
+        <img src="{{ url_for('static', filename='images/logo-glam.png') }}" alt="base-tradicional">
+        <h4>Hipoalergênica</h4>
+        <p class="descricao">Não causa coceira, alergia ou irritações.</p>
+      </div>
+      <div class="quadros">
+        <img src="{{ url_for('static', filename='images/logo-glam.png') }}" alt="base-tradicional">
+        <h4>Impermeável</h4>
+        <p class="descricao">Não absorve umidade, ou seja, não prolifera fungos, nem bactérias.</p>
+      </div>
+      <div class="quadros">
+        <img src="{{ url_for('static', filename='images/logo-glam.png') }}" alt="base-tradicional">
+        <h4>Resistente</h4>
+        <p class="descricao">Mesmo sendo fina e leve é ultrasegura, com durabilidade de 1 ano a 1 ano e meio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner secundário -->
+  <section class="glamurosas">
+      <h2>
+        <span class="glam">GLAM</span>
+        <span class="urosas">UROSAS</span>
+      </h2>
+  </section>
+  <section class="antes-depois-videos">
+    <div class="video-card">
+      <video autoplay loop muted playsinline>
+        <source loading="lazy" src="{{ url_for('static', filename='videos/extensão-de-cabelo-depois-video.mp4') }}" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+
+    <div class="video-card">
+      <video autoplay loop muted playsinline>
+        <source src="{{ url_for('static', filename='videos/extensão-de-cabelo-antes-depois-video.mp4') }}" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+
+    <div class="video-card">
+      <video autoplay loop muted playsinline>
+        <source src="{{ url_for('static', filename='videos/extensão-de-cabelo-antes-depois-video-glam.mp4') }}" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+  </section>
+
+  <!-- Compre por coleção -->
+  <section class="compre-colecao"> 
+    <h3><span class="colecao">APAIXONE-SE </span>NAS COLEÇÕES</h3>
+    <div class="colecao-grid">
+      <div class="colecao-item grande">
+        <a href="{{ url_for('brasileiro') }}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/cores-virgens-brasileiro-do-sul.jpg') }}" alt="BR SUL">
+          <p class="titulo-overlay">BRASILEIRO DO SUL</p>
+        </a>
+      </div>
+      <div class="colecao-item pequena">
+        <a href="{{ url_for('regional') }}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/mega-hair-brasileiro-regional.jpg') }}" alt="BR REGIONAL">
+          <p class="titulo-overlay">BRASILEIRO REGIONAL</p>
+        </a>
+      </div>
+      <div class="colecao-item pequena">
+        <a href="{{ url_for('russo') }}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/mega-hair-russo.jpg') }}" alt="RUSSO">
+          <p class="titulo-overlay">RUSSO</p>
+        </a>
+      </div>
+      <div class="colecao-item pequena">
+        <a href="{{ url_for('acessorios') }}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/mega-hair-franja.png') }}" alt="FRANJA">
+          <p class="titulo-overlay">FRANJA</p>
+        </a>
+      </div>
+      <div class="colecao-item pequena">
+        <a href="{{ url_for('acessorios') }}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/mega-hair-tic-tac.jpg') }}" alt="TIC TAC">
+          <p class="titulo-overlay">TIC TAC</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- CATÁLOGO POR ESTILO DE COR -->
+  <section class="compre-colecao">
+    <h3>CATÁLOGO POR <span class="colecao">ESTILO DE COR</span></h3>
+    <p class="compre-colecao-p">
+      Cada cor conta uma história única. <br>
+      Escolha a <strong>extensão de cabelo</strong> ou <strong>mega hair</strong> que melhor representa a essência da sua cliente — com <strong>naturalidade</strong>, <strong>brilho</strong> e <strong>sofisticação</strong>. <br>
+      Trabalhamos apenas com <strong>cabelo humano premium</strong>, garantindo leveza, movimento e resultado impecável. <br>
+      Surpreenda-se com uma paleta de cores que transforma <strong>autoestima</strong> em <strong>beleza real</strong> e <strong>valorização profissional</strong>.
+    </p>
+    
+    <div class="catalogo-cores">
+      <div class="colecao-item pequena">
+        <a href="{{ url_for('cores_solidas') }}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/cores-solidas.jpeg') }}" alt="CORES SÓLIDAS">
+          <p class="titulo-overlay">CORES SÓLIDAS</p>
+        </a>
+      </div>
+      <div class="colecao-item pequena">
+        <a href="{{ url_for('cores_mescladas')}}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/cores-mescladas.jpeg') }}" alt="CORES MESCLADAS">
+          <p class="titulo-overlay">CORES MESCLADAS</p>
+        </a>
+      </div>
+      <div class="colecao-item pequena">
+        <a href="{{ url_for ('cores_ombre')}}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/cores-balayage.jpeg') }}" alt="OMBRAÉ/BALAYAGE">
+          <p class="titulo-overlay">OMBRAÉ/BALAYAGE</p>
+        </a>
+      </div>
+      <div class="colecao-item pequena">
+        <a href="{{ url_for('brasileiro') }}" class="colecao-link">
+          <img src="{{ url_for('static', filename='images/cores-virgens-brasileiro-do-sul-1.jpg') }}" alt="VIRGENS">
+          <p class="titulo-overlay">VIRGENS</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="consultores-bloco">
+    <div class="consultores-container">
+      <div class="consultores-texto">
+        <p>
+          DESEJA MAIS <br>
+          INFORMAÇÕES OU <br>
+          QUER REALIZAR SEU PEDIDO?
+          <strong><em>FALE COM <br> UM DE NOSSOS <br> CONSULTORES:</em></strong>
+        </p>
+      </div>
+    </div>
+    <div class="bloco-whatsapp">
+      <div class="consultores-lista">
+        <div class="consultor-card">
+          <i class="fab fa-whatsapp"></i>
+          <a target="_blank" href="https://wa.me/5562999329673"><span class="grossa1"><strong>Consultora Kallyta</strong><span class="espaco1">|</span></span><span class="fina">WhatsApp: +55 62 9932-9673</span></a>
+        </div>
+        <div class="consultor-card">
+          <i class="fab fa-whatsapp"></i>
+          <a target="_blank" href="https://wa.me/5562982941042"><span class="grossa"><strong>Consultora Yorrane</strong><span class="espaco">|</span></span><span class="fina">WhatsApp: +55 62 8294-1042</span></a>
+        </div>
+      </div>
+      <div class="consultores-social">
+        <div class="acompanhe">
+          <h4>NOS ACOMPANHE<br><em>NAS REDES SOCIAIS:</em></h4>
+          <p>
+          <i class="fab fa-instagram"></i>Instagram: <a href="https://www.instagram.com/glamhairbrand/" target="_blank">@glamhairbrand</a>
+         </p>
+        </div>
+
+        <div class="especial">
+          <p class="social-descricao">
+            Estamos prontos para atender você e tornar sua experiência com Glam <strong>ainda mais especial!</strong>
+          </p>
+        </div>
+      </div>  
+    </div>
+  </section>
+  <section class="blog-destaques">
+    <h2><span class="glam-titulo">GLAM </span>MAGAZINE</h2>
+    <div class="blog-magazine-grid">
+      <!-- POST EM DESTAQUE (ESQUERDA) -->
+      <div class="blog-card-unico">
+        <a href="{{ url_for('post', slug=posts[0].slug) }}" class="blog-card destaque">
+          <img src="{{ url_for('static', filename=posts[0].imagem) }}" alt="{{ posts[0].titulo }}">
+          <div class="overlay">
+            <h3>{{ posts[0].titulo }}</h3>
+            <p>{{ posts[0].resumo[:90] }}...</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- DOIS POSTS MENORES (DIREITA) -->
+      <div class="blog-card-dupla">
+        {% for post in posts[1:3] %}
+          <a href="{{ url_for('post', slug=post.slug) }}" class="blog-card menor">
+            <img src="{{ url_for('static', filename=post.imagem) }}" alt="{{ post.titulo }}">
+            <div class="overlay"> 
+              <h3>{{ post.titulo }}</h3>
+              <p>{{ post.resumo[:80] }}...</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+   <!-- {% include 'patricia.html' %} -->
+
+
+  <footer>{% include 'footer.html' %}</footer>
+
+  <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+  <script>
+    function abrirChat() {
+      document.getElementById('chat-modal').style.display = 'block';
+    }
+    function fecharChat() {
+      document.getElementById('chat-modal').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const descricoes = document.querySelectorAll('.descricao');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visivel');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2 // Animação ativa quando 20% da seção estiver visível
+      });
+
+      descricoes.forEach(desc => {
+        observer.observe(desc);
+      });
+    });
+  </script>
+  <script>
+  const toggle   = document.getElementById('menu-toggle');
+  const navMenu  = document.getElementById('nav-menu');
+  const navList  = navMenu.querySelector('ul');
+
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Abrir menu');
+
+  toggle.addEventListener('click', () => {
+    const opened = navList.classList.toggle('show');
+    document.body.classList.toggle('nav-open', opened);
+    toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+    toggle.setAttribute('aria-label', opened ? 'Fechar menu' : 'Abrir menu');
+  });
+
+  // fecha ao clicar em links
+  navList.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      navList.classList.remove('show');
+      document.body.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menu');
+    }
+  });
+</script>
+
+   
+</body>
+</html>

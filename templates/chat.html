@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Fale com a Patrícia</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/maxima-nouva?styles=185767" rel="stylesheet">
+</head>
+<body>
+  <div class="chat-container">
+    <h2>Em que posso ser útil? 💁‍♀️</h2>
+    <div class="patricia-intro-container">
+        <img src="{{ url_for('static', filename='images/pat-glam-3.png') }}" alt="Pat Glam" class="patricia-avatar">
+        <div id="patricia-intro" class="patricia-intro"></div>
+    </div>
+    <div id="chat-box"></div>
+    <div class="chat-input-wrapper">
+    <input type="text" id="user-input" placeholder="Digite sua pergunta...">
+    <button onclick="sendMessage()" class="botao-enviar">
+        <span class="material-icons">send</span>
+    </button>
+    </div>
+
+  </div>
+  
+
+
+    <script>
+        const introText = `Seja bem-vinda ao universo Glam! 💕  
+        Aqui, quem brilha com propósito é chamada de *Patrícia*.  
+        Sou sua assistente virtual — pronta para te orientar com carinho e elegância.  
+        Juntas, vamos descobrir se você está pronta para se tornar uma Pat Poderosa. ✨`;
+
+        let i = 0;
+        const speed = 30;
+
+        function typeIntro() {
+            const target = document.getElementById("patricia-intro");
+            const typingSound = document.getElementById("typing-sound");
+
+            if (i < introText.length) {
+            target.textContent += introText.charAt(i);
+
+            if (introText.charAt(i) !== " " && i % 2 === 0 && typingSound) {
+                typingSound.currentTime = 0;
+                typingSound.play();
+            }
+
+            i++;
+            setTimeout(typeIntro, speed);
+            } else {
+            document.querySelector(".chat-input-wrapper").style.display = "flex";
+            }
+        }
+
+        window.onload = () => {
+            document.querySelector(".chat-input-wrapper").style.display = "none";
+            typeIntro();
+        };
+
+        async function sendMessage() {
+            const input = document.getElementById("user-input");
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<div class="user-msg"><strong>Você:</strong> ${message}</div>`;
+            input.value = "";
+
+            const initialTyping = document.createElement("div");
+            initialTyping.className = "bot-msg typing";
+            initialTyping.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="{{ url_for('static', filename='images/pat-glam-3.png') }}" alt="Pat Glam" style="width: 35px; height: 35px; border-radius: 50%;">
+                <div><strong>Pati:</strong> <span class="dot-animation">digitando<span>.</span><span>.</span><span>.</span></span></div>
+            </div>`;
+            chatBox.appendChild(initialTyping);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            const response = await fetch("/chat", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message })
+            });
+
+            const data = await response.json();
+            const reply = data.reply;
+
+            const parts = reply.split(/(?<=[.!?])\s+/g);
+            const replyChunks = [];
+            let tempChunk = "";
+
+            for (let part of parts) {
+            if ((tempChunk + part).length < 150) {
+                tempChunk += part + " ";
+            } else {
+                replyChunks.push(tempChunk.trim());
+                tempChunk = part + " ";
+            }
+            }
+            if (tempChunk.trim()) replyChunks.push(tempChunk.trim());
+
+            chatBox.removeChild(initialTyping);
+
+            for (let i = 0; i < replyChunks.length; i++) {
+            const typingIndicator = document.createElement("div");
+            typingIndicator.className = "bot-msg typing";
+            typingIndicator.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="{{ url_for('static', filename='images/pat-glam-3.png') }}" alt="Pat Glam" style="width: 35px; height: 35px; border-radius: 50%;">
+                <div><strong>Pati:</strong> <span class="dot-animation">digitando<span>.</span><span>.</span><span>.</span></span></div>
+                </div>`;
+            chatBox.appendChild(typingIndicator);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            const delay = Math.min(5000, Math.max(1500, replyChunks[i].length * 25));
+            await new Promise(resolve => setTimeout(resolve, delay));
+
+            chatBox.removeChild(typingIndicator);
+
+            const replyWithButton = replyChunks[i].replace(
+                /(https:\/\/wa\.me\/\d+)/g,
+                `<a href="$1" target="_blank" class="whatsapp-button">Falar com uma consultora Glam ✨</a>`
+            );
+
+            const responseDiv = document.createElement("div");
+            responseDiv.className = "bot-msg";
+            responseDiv.innerHTML = `
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                <img src="{{ url_for('static', filename='images/pat-glam-3.png') }}" alt="Pat Glam" style="width: 35px; height: 35px; border-radius: 50%;">
+                <div><strong>Pati:</strong> ${replyWithButton}</div>
+                </div>`;
+            chatBox.appendChild(responseDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+
+        document.getElementById("user-input").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+            event.preventDefault();
+            sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

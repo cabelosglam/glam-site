@@ -1,0 +1,115 @@
+.faq-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Maxima Nouva', sans-serif;
+  border-radius: 16px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.faq-title {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #7F7F80;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+
+
+}
+
+.faq-container {
+  border-top: 1px solid #e6e6e6;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.3rem;
+  padding: 12px 10px; 
+  cursor: pointer;
+  color: #7c7c7c;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: 'Maxima Nouva', sans-serif;
+  letter-spacing: 0.5px;
+
+
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 10px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-question:hover {
+  color: #504f4f;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 10px 10px 20px;
+  color: #444;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: 'Maxima Nouva', sans-serif;
+  letter-spacing: 0.5px;
+
+
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Maxima Nouva', sans-serif;
+    border-radius: 16px;
+    margin-bottom: 50px;
+    margin-top: -50px;
+  }
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.0rem;
+  padding: 12px 10px; 
+  cursor: pointer;
+  color: #7c7c7c;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: 'Maxima Nouva', sans-serif;
+  letter-spacing: 0.5px;
+
+
+}
+
+}

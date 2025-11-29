@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Glam – Conversas</title>
+    <link rel="stylesheet" href="/static/css/glam.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h2>Mensagens</h2>
+
+        {% for telefone, dados in conversas.items() %}
+        <div class="contato" onclick="window.location='/conversa/{{ telefone | replace('+','') }}'">
+            <div class="contato-left">
+                <!-- Avatar = últimos 4 dígitos -->
+                <div class="avatar">
+                    {{ telefone[-4:] }}
+                </div>
+                <div class="contato-info">
+                    <div class="numero">{{ telefone }}</div>
+                    <div class="msg">{{ dados.ultima_msg }}</div>
+                </div>
+            </div>
+            <div class="hora">
+                {{ dados.hora }}
+
+                {% if dados.nao_lidas > 0 %}
+                <div class="badge">{{ dados.nao_lidas }}</div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="chat-area">
+        <div class="chat-header">
+            Selecione uma conversa
+        </div>
+        <div class="chat-body" style="display:flex;align-items:center;justify-content:center;color:#999;">
+            Nenhuma conversa selecionada.
+        </div>
+    </div>
+
+</div>
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+<script>
+const socket = io();
+
+// Quando uma nova mensagem chega
+socket.on("nova_mensagem", (data) => {
+    console.log("Nova msg:", data);
+
+    // Atualiza a página sem reload
+    // Melhor: força recarregar só a sidebar
+    location.reload();
+});
+</script>
+
+
+</body>
+</html>

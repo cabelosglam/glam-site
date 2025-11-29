@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Glam – Conversa</title>
+    <link rel="stylesheet" href="/static/css/glam.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar com lista de conversas -->
+    <div class="sidebar">
+        <h2>Mensagens</h2>
+
+        {% for tel, dados in conversas.items() %}
+        <div class="contato"
+             onclick="window.location='/conversa/{{ tel | replace('+','') }}'">
+            <div class="contato-left">
+                <div class="avatar">
+                    {{ tel[-4:] }}
+                </div>
+                <div class="contato-info">
+                    <div class="numero">{{ tel }}</div>
+                    <div class="msg">{{ dados.ultima_msg }}</div>
+                </div>
+            </div>
+            <div class="hora">
+                {{ dados.hora }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Área da conversa -->
+    <div class="chat-area">
+
+        <div class="chat-header">
+            Conversa com {{ telefone }}
+        </div>
+
+        <div class="chat-body">
+
+            {% for msg in conversa %}
+                <div class="msg-bubble msg-client">
+                    {{ msg.texto }}<br>
+                    <small>{{ msg.hora }}</small>
+                </div>
+
+                {% if msg.resposta %}
+                <div class="msg-bubble msg-glam">
+                    {{ msg.resposta }}<br>
+                    <small>Respondido</small>
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+
+        <form class="chat-footer" action="/responder" method="POST">
+            <input type="hidden" name="index" value="{{ ultimo_index }}">
+            <input type="hidden" name="telefone" value="{{ telefone }}">
+
+            <textarea name="resposta" placeholder="Escreva sua resposta..."></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+    </div>
+
+</div>
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+<script>
+const socket = io();
+
+socket.on("nova_mensagem", (data) => {
+
+    // Se a mensagem é desta conversa, colocar no chat ao vivo
+    if (data.telefone === "{{ telefone }}") {
+
+        const chat = document.querySelector(".chat-body");
+
+        const bubble = document.createElement("div");
+        bubble.classList.add("msg-bubble", "msg-client");
+        bubble.innerHTML = `${data.texto}<br><small>${data.hora}</small>`;
+
+        chat.appendChild(bubble);
+
+        chat.scrollTop = chat.scrollHeight;
+
+    } else {
+        // Mensagem de outra cliente → atualizar apenas badge da sidebar
+        location.reload();
+    }
+
+});
+</script>
+
+
+</body>
+</html>
