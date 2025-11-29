@@ -368,7 +368,7 @@
         document.getElementById('cupomBox').hidden = false;
         // 👉 DISPARA O WHATSAPP 30 SEGUNDOS DEPOIS
         setTimeout(() => {
-            fetch("/api/enviar-wpp-oficial", {
+            fetch("https://glam-site.onrender.com/api/enviar-wpp-oficial", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
