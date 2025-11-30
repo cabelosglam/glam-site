@@ -111,18 +111,17 @@ def conversa(telefone_url):
 
 
 
-# --- ROTA PARA RECEBER E SALVAR MENSAGENS QUE CHEGAM (Webhook do WhatsApp) ---
-# --- ROTA PARA RECEBER E SALVAR MENSAGENS QUE CHEGAM (Webhook do WhatsApp) ---
 @app.route("/webhook-wpp", methods=["GET", "POST"])
 def webhook_wpp():
     if request.method == "GET":
-        # Só pra você testar no navegador / Twilio Debugger
         return "Webhook Glam OK - use POST para WhatsApp", 200
 
     data = request.form
 
-    texto = data.get("Body")
-    telefone = data.get("From").replace("whatsapp:", "")
+    texto = data.get("Body", "")
+    telefone_raw = data.get("From", "")
+
+    telefone = telefone_raw.replace("whatsapp:", "") if telefone_raw else "desconhecido"
 
     mensagens = carregar_mensagens()
 
