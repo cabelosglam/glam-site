@@ -10,14 +10,14 @@ from flask_socketio import SocketIO
 import json
 from datetime import datetime
 
-
+load_dotenv()
 ACCOUNT_SID = os.getenv("ACCOUNT_SID")
 AUTH_TOKEN = os.getenv("AUTH_TOKEN")
 FROM_WPP = os.getenv("FROM_WPP")
 
 twilio_client = TwilioClient(ACCOUNT_SID, AUTH_TOKEN)
 # Carregar variáveis do .env
-load_dotenv()
+
 
 # Inicializa cliente da OpenAI com a nova sintaxe
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
